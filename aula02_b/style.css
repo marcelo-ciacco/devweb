@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    margin: 0;
+}
+
+#hero{
+    margin: 0 auto;
+    padding: 80px 0;
+    max-width: 1120px;
+    width: 90%;
+    border: 1px solid red;
+}
+
+p{
+    color: #64748b;
+    font-size: 1rem;
+    /*
+        vh => view height
+        vw => view width
+    */
+}
+
+.fundo{
+    color: #2563eb;
+    font-weight: bold;
+}
