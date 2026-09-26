@@ -1,30 +1,43 @@
 import { Header } from "./components/Header"
+import { TicketCard } from "./components/TicketCard"
+import { Panel } from "./components/Panel"
+import { initialTickets } from "./data/ticket"
 
 function App() {
 
   return (
     <>
       <div className="min-h-screen bg-slate-100">
-        <Header />
+        
+        <Header
+          title = "HelpDesk Lite"
+          subtitle = "Gerenciamento de chamados"
+        />
         
         <main className="mx-auto max-w-6xl p-6">
-          <h2 className="mb-4 text-xl font-semibold">
-            Chamados recentes
-          </h2>
 
-          <div className="rounded-lg bg-white p-5 shadow">
-            <h3 className="font-semibold">
-              Problema no login
-            </h3>
+          <Panel title="Chamados recentes">
 
-            <p className="mt-2 text-slate-600">
-              Usuário não consegue acessar o sistema
-            </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            
+            {initialTickets.map((ticket)=>(
 
-            <span className="mt-4 inline-block rounded-full-lg bg-slate-200 px-3 py-1 text-sm">
-              Aberto
-            </span>
+              <TicketCard
+                key = {ticket.id}
+                title = {ticket.title}
+                description = {ticket.description}
+                status = {ticket.status}
+                priority = {ticket.priority}
+              />
+
+            ))}
+
+
+
           </div>
+
+          </Panel>
+
         </main>
 
       </div>
