@@ -8,6 +8,10 @@ export type TicketPriority =
     | "Media"
     | "Alta"
 
+export type TicketFilter = 
+    | "Todos"
+    | TicketStatus
+
 export type Ticket = {
     id: number
     title: string

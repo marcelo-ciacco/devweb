@@ -1,48 +1,25 @@
-import { Header } from "./components/Header"
-import { TicketCard } from "./components/TicketCard"
-import { Panel } from "./components/Panel"
-import { initialTickets } from "./data/ticket"
+import {Route, Routes} from "react-router"
+import { TicketPage } from "./pages/TicketPage"
+import { HomePage } from "./pages/HomePage"
 
 function App() {
 
-  return (
-    <>
-      <div className="min-h-screen bg-slate-100">
-        
-        <Header
-          title = "HelpDesk Lite"
-          subtitle = "Gerenciamento de chamados"
-        />
-        
-        <main className="mx-auto max-w-6xl p-6">
+  return(
+    <Routes>
 
-          <Panel title="Chamados recentes">
+      <Route
+        path="/"
+        element={<HomePage />}
+      />
 
-          <div className="grid gap-4 md:grid-cols-2">
-            
-            {initialTickets.map((ticket)=>(
+      <Route 
+        path="/chamados"
+        element={<TicketPage />}
+      />
 
-              <TicketCard
-                key = {ticket.id}
-                title = {ticket.title}
-                description = {ticket.description}
-                status = {ticket.status}
-                priority = {ticket.priority}
-              />
-
-            ))}
-
-
-
-          </div>
-
-          </Panel>
-
-        </main>
-
-      </div>
-    </>
+    </Routes>
   )
+  
 }
 
 export default App

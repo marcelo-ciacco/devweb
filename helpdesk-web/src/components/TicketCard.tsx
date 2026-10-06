@@ -1,8 +1,10 @@
+import type { TicketStatus, TicketPriority } from "../types/Ticket"
+
 type TicketCardProps = {
     title :  string
     description : string
-    status: "Aberto" | "Em andamento" | "Concluído"
-    priority: "Baixa" | "Média" | "Alta"
+    status: TicketStatus
+    priority: TicketPriority
 }
 
 export function TicketCard({
