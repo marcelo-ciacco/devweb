@@ -48,7 +48,7 @@ export function TicketPage(){
     }
 
     loadTickets()
-  })
+  }, [])
 
   if(loading) {
     return (
